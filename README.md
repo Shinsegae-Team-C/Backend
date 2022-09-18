@@ -1,2 +1,4 @@
-# shinsegae_project
-마트 프로젝트
+# Backend
+마트 프로젝트 백엔드
+
+# 환경설정
