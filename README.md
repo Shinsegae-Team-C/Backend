@@ -15,7 +15,7 @@ IntelliJ 2022.02
 MySQL workbench 8.0 CE
 
 ### 사용한 기술 스택
-- Spring Boot 2.7.3 (JAVA11)
+- Spring Boot 2.7.3 (JAVA 11)
 - MySQL
 - Spring Boot
 
