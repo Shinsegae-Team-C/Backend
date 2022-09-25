@@ -1,8 +1,12 @@
 package com.pjt.project.service;
 
+import com.pjt.project.dto.LoginDto;
 import com.pjt.project.model.User;
 
-public interface UserService {
+import java.util.Map;
 
-    boolean login(User user);
+public interface UserService {
+    String insertSignUpInfo(User user);
+    Map<String, Object> selectLoginInfo(LoginDto loginDto);
+    String checkPhoneNumber(String phoneNumber);
 }
