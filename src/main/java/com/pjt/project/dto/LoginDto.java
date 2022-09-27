@@ -1,19 +1,15 @@
-package com.pjt.project.model;
+package com.pjt.project.dto;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class LoginDto {
     private String userId;
-    private String userName;
     private String userPw;
-    private String address;
-    private String phoneNumber;
 }
 
 

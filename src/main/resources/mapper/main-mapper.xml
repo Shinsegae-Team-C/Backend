@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pjt.project.mapper.MainMapper">
+
+    <select id="selectProductList" parameterType="Map" resultType="com.pjt.project.model.Product">
+        SELECT *
+        FROM PRODUCTS
+        WHERE PRODUCT_NAME LIKE CONCAT('%', #{productName}, '%')
+    </select>
+
+</mapper>

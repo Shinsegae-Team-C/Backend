@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pjt.project.mapper.ProductListMapper">
+
+    <!--1. 상품 리스트 조회-->
+    <select id="selectProductList" parameterType="Map" resultType="Map">
+        SELECT PRODUCT_ID, PRICE, PRODUCT_NAME
+        FROM PRODUCTS
+        WHERE PRODUCT_NAME LIKE CONCAT('%',#{productName},'%');
+    </select>
+
+    <insert id="saveProduct" parameterType="Map">
+        INSERT INTO cart (USER_ID, PRODUCT_ID, PRODUCT_CNT)
+        VALUES (#{userId}, #{productId}, 1)
+            ON DUPLICATE KEY UPDATE PRODUCT_CNT = PRODUCT_CNT + 1;
+    </insert>
+
+    <!--2. 장바구니 신규 저장 -->
+    <insert id="insertProduct" parameterType="Map">
+        INSERT INTO CART
+        (
+             USER_ID,
+             PRODUCT_ID,
+             PRODUCT_CNT
+        )
+        VALUES
+        (
+             #{userId},
+             #{productId},
+             1
+        );
+    </insert>
+
+    <!--3. 장바구니 이미 있는 상품은 cnt 업데이트 -->
+    <update id="updateProduct" parameterType="Map">
+        UPDATE CART
+        SET PRODUCT_CNT = PRODUCT_CNT + 1
+        WHERE USER_ID = #{userId} and PRODUCT_ID = #{product};
+    </update>
+
+    <!--4. 장바구니에 product가 있는지 여부-->
+    <select id="chkProductInCart" parameterType="Map" resultType="Integer">
+        SELECT count(*) FROM CART WHERE USER_ID = #{userId} and PRODUCT_ID = #{productId};
+    </select>
+</mapper>
