@@ -3,7 +3,7 @@
 
 <mapper namespace="com.pjt.project.mapper.MainMapper">
 
-    <select id="selectProductList" resultType="com.pjt.project.model.Product">
+    <select id="selectProductList" parameterType="Map" resultType="com.pjt.project.model.Product">
         SELECT *
         FROM PRODUCTS
         WHERE PRODUCT_NAME LIKE CONCAT('%', #{productName}, '%')

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -18,7 +19,7 @@ public class MainServiceImpl implements MainService{
 
     @Override
     @SneakyThrows
-    public List<Product> selectProductList(String productName){
+    public List<Product> selectProductList(Map<String,String> productName){
         return mainMapper.selectProductList(productName);
     }
 }
