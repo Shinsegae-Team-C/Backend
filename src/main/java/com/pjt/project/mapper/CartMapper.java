@@ -13,5 +13,5 @@ public interface CartMapper {
     void insertOrderDetail(Map map);
     void deleteCartInfo(Map map);
 
-    void updateStockInfo(Map map);
+    //void updateStockInfo(Map map);
 }

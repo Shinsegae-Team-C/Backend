@@ -20,8 +20,7 @@ public class CartServiceImpl implements CartService{
     @Override
     @SneakyThrows
     public List<Map<String, Object>> selectCartList(Map<String, String> req){
-        List<Map<String, Object>> result = cartMapper.selectCartList(req);
-        return result;
+        return cartMapper.selectCartList(req);
     }
 
     @Override
@@ -36,7 +35,7 @@ public class CartServiceImpl implements CartService{
         //orderDetail 넣기, stock 업데이트
         for(int i = 0; i < req.size(); i++){
             cartMapper.insertOrderDetail(req.get(i));
-            cartMapper.updateStockInfo(req.get(i));
+            //cartMapper.updateStockInfo(req.get(i));
         }
 
         //deleteCartInfo 지우기
