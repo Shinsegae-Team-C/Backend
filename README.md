@@ -11,8 +11,8 @@
 3. 기업의 사회적인 책임을 적극적으로 수행한다.
 
 ### Tool
-IntelliJ 2022.02
-MySQL workbench 8.0 CE
+* IntelliJ 2022.02
+* MySQL workbench 8.0 CE
 
 ### 사용한 기술 스택
 - Spring Boot 2.7.3 (JAVA 11)
