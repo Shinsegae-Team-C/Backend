@@ -5,9 +5,9 @@
 
     <!--1. 장바구니 리스트 조회-->
     <select id="selectCartList" parameterType="Map" resultType="Map">
-        SELECT C.USER_ID, C.PRODUCT_ID, P.PRODUCT_NAME, C.PRODUCT_CNT
+        SELECT C.USER_ID, C.PRODUCT_ID, P.PRODUCT_NAME, C.PRODUCT_CNT, P.PRICE * C.PRODUCT_CNT AS PRICE, 'false' as CHK_YN
         FROM CART AS C
-        LEFT JOIN PRODUCTS AS P ON C.PRODUCT_ID = P.PRODUCT_ID
+                 LEFT JOIN PRODUCTS AS P ON C.PRODUCT_ID = P.PRODUCT_ID
         WHERE USER_ID = #{userId};
     </select>
 
