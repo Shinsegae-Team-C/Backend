@@ -7,5 +7,7 @@ public interface CartService {
 
     List<Map<String, Object>> selectCartList(Map<String, String> req) throws Exception;
 
-    Map<String, String> saveOrder(List<Map<String,String> > req) throws Exception;
+    Map<String, String> saveOrder(Map<String,Object> req) throws Exception;
+
+    Map<String, String> deleteCartInfo(Map<String, String> req) throws Exception;
 }

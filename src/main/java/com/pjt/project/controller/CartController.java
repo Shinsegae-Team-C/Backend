@@ -29,8 +29,14 @@ public class CartController {
 
     @PostMapping("/saveOrder")
     @ApiOperation(value="주문하기", notes="주문하기")
-    public Map<String, String> saveOrder(@RequestBody List<Map<String,String>> req) throws Exception{
+    public Map<String, String> saveOrder(@RequestBody Map<String,Object> req) throws Exception{
         return cartService.saveOrder(req);
+    }
+
+    @PostMapping("/deleteCartInfo")
+    @ApiOperation(value="장바구니아이템삭제", notes="장바구니아이템삭제")
+    public Map<String, String> deleteCartInfo(@RequestBody Map<String,String> req) throws Exception{
+        return cartService.deleteCartInfo(req);
     }
 
 }
