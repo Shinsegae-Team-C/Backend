@@ -7,7 +7,7 @@
     <select id="selectOrderInfo" parameterType="Map" resultType="Map">
         SELECT ORDER_ID, USER_ID, ORDER_DATE, TOTAL_PRICE
         FROM ORDERS
-        WHERE USER_ID = #{userId};
+        WHERE USER_ID = #{userId} AND ORDER_ID = #{orderId};
     </select>
 
     <!--2. 주문 디테일 리스트조회-->
