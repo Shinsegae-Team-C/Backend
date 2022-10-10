@@ -4,6 +4,7 @@ import com.pjt.project.mapper.ProductListMapper;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -16,6 +17,13 @@ public class ProductListServiceImpl implements ProductListService{
 
     @Resource
     ProductListMapper productListMapper;
+
+    @Override
+    @SneakyThrows
+    public Map<String, Object> selectProductItem(@RequestBody Map<String, String> req){
+        Map<String, Object> result = productListMapper.selectProductItem(req);
+        return result;
+    }
     @Override
     @SneakyThrows
     public List<Map<String, Object>> selectProductList(Map<String, String> req){

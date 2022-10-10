@@ -10,6 +10,13 @@
         WHERE PRODUCT_NAME LIKE CONCAT('%',#{productName},'%');
     </select>
 
+    <!--2. 상품 디테일 조회-->
+    <select id="selectProductItem" parameterType="Map" resultType="Map">
+        SELECT PRODUCT_ID, PRICE, PRODUCT_NAME, PRODUCT_IMG
+        FROM PRODUCTS
+        WHERE PRODUCT_ID = #{productId};
+    </select>
+
     <insert id="saveProduct" parameterType="Map">
         INSERT INTO cart (USER_ID, PRODUCT_ID, PRODUCT_CNT)
         VALUES (#{userId}, #{productId}, 1)

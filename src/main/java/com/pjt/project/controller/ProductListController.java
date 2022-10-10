@@ -20,8 +20,16 @@ public class ProductListController {
     @Resource
     ProductListService productListService;
 
+    @PostMapping("/selectProductItem")
+    @ApiOperation(value="상품 하나 조회", notes="새로고침 시 사용")
+    public Map<String, Object> selectProductItem(@RequestBody Map<String, String> req) throws Exception{
+        //System.out.println(req);
+        Map<String, Object> result = productListService.selectProductItem(req);
+        return result;
+    }
+
     @PostMapping("/selectProductList")
-    @ApiOperation(value="상품 정보 조회", notes="새로고침 시 사용")
+    @ApiOperation(value="상품 리스트 조회", notes="새로고침 시 사용")
     public List<Map<String, Object>> selectProductList(@RequestBody Map<String, String> req) throws Exception{
         //System.out.println(req);
         List<Map<String, Object>> result = productListService.selectProductList(req);

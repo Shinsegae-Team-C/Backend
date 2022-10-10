@@ -32,6 +32,9 @@ public class OrderServiceImpl implements OrderService{
         result.put("orderInfo", orderInfo);
         result.put("orderDetail", orderDetailList);
 
+        //System.out.println("selectOrderList");
+        //System.out.println(result);
+
         return result;
     }
 }
