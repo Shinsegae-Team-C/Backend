@@ -12,7 +12,7 @@
 
     <!--2. 주문 디테일 리스트조회-->
     <select id="selectOrderDetailList" parameterType="Map" resultType="Map">
-        SELECT OD.PRODUCT_ID, OD.CNT, P.PRICE * OD.CNT AS TOTAL_PRICE
+        SELECT OD.PRODUCT_ID, OD.CNT, P.PRICE * OD.CNT AS TOTAL_PRICE, P.PRODUCT_NAME, P.PRICE
         FROM ORDERDETAIL OD
             LEFT JOIN PRODUCTS P
                 ON OD.PRODUCT_ID = P.PRODUCT_ID
